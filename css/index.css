@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+html,
+body {
+  height: 100%;
+  font-family: "Mircosoft Yahei"; }
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none; }
+
+ul,
+ol {
+  list-style-type: none; }
+
+input {
+  outline: none; }
+
+body {
+  background: #fe620d;
+  max-width: 640px;
+  margin: 0 auto; }
+
+.banner {
+  width: 100%;
+  height: auto; }
+  .banner img {
+    color: transparent;
+    font-size: 0;
+    vertical-align: middle;
+    max-width: 100%; }
+
+.main {
+  margin: 0 auto;
+  width: 100%;
+  height: 227px;
+  background: url(../img/index-bg.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%; }
+  .main .buttons {
+    width: 494px;
+    height: 63px;
+    padding-top: 20px;
+    margin: 0 auto; }
+    .main .buttons a {
+      height: 100%;
+      width: 237px; }
+    .main .buttons a.left {
+      float: left;
+      background: url(../img/index-btn1.png) no-repeat;
+      background-size: 100% 100%;
+      -webkit-background-size: 100% 100%; }
+    .main .buttons a.right {
+      float: right;
+      background: url(../img/index-btn2.png) no-repeat;
+      background-size: 100% 100%;
+      -webkit-background-size: 100% 100%; }
+
+.info {
+  width: 80%;
+  margin: 60px auto;
+  background-color: #d23c07;
+  padding: 20px 0;
+  border-radius: 6px;
+  -webkit-border-radius: 6px; }
+  .info p {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 21px;
+    color: #ffffff; }
+
+@media screen and (max-width: 640px) {
+  .main {
+    height: 35.46875vw; }
+    .main .buttons {
+      width: 77.1875vw;
+      height: 9.84375vw;
+      padding-top: 3.125vw; }
+      .main .buttons a {
+        height: 100%;
+        width: 37.03125vw; } }
+@media screen and (max-width: 480px) {
+  .info {
+    margin: 9.375vw auto;
+    padding: 3.125vw 0;
+    border-radius: 0.9375vw;
+    -webkit-border-radius: 0.9375vw; }
+    .info p {
+      font-size: 3.75vw; } }
+
+/*# sourceMappingURL=index.css.map */

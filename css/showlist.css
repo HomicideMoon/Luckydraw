@@ -1,0 +1,116 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+html,
+body {
+  height: 100%;
+  font-family: "Mircosoft Yahei"; }
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none; }
+
+ul,
+ol {
+  list-style-type: none; }
+
+input {
+  outline: none; }
+
+body {
+  background: #f9f1cd;
+  max-width: 640px;
+  margin: 0 auto; }
+
+.main {
+  width: 100%;
+  height: auto; }
+  .main .banner {
+    width: 100%; }
+    .main .banner img {
+      color: transparent;
+      font-size: 0;
+      vertical-align: middle;
+      max-width: 100%; }
+  .main .tit {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #0d8093; }
+  .main .lists {
+    width: 90%;
+    margin: 0 auto;
+    height: auto; }
+    .main .lists .single {
+      box-sizing: border-box;
+      width: 100%;
+      font-size: 14px;
+      line-height: 21px;
+      padding: 15px;
+      margin: 7px auto;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      background: #FFF;
+      overflow: hidden; }
+      .main .lists .single .left {
+        width: 50%;
+        float: left;
+        line-height: 21px; }
+      .main .lists .single .right {
+        color: #999999;
+        width: 50%;
+        float: left;
+        font-size: 12px;
+        text-align: right; }
+    .main .lists .single.first {
+      text-align: center; }
+  .main .tit-bottom {
+    width: 100%;
+    font-size: 16px;
+    color: #F00F00;
+    text-align: center; }
+  .main .btn-back {
+    display: block;
+    width: 90%;
+    margin: 10px auto 20px auto;
+    background: #FF4200;
+    line-height: 51px;
+    text-align: center;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 14px; }
+
+@media screen and (max-width: 480px) {
+  .main .tit {
+    font-size: 5.83333vw;
+    line-height: 7.5vw; }
+  .main .lists .single {
+    width: 100%;
+    font-size: 4.375vw;
+    line-height: 4.375vw;
+    padding: 3.125vw;
+    margin: 1.45833vw auto;
+    border-radius: 4.16667vw;
+    -webkit-border-radius: 4.16667vw; }
+    .main .lists .single .left {
+      line-height: 4.375vw; }
+    .main .lists .single .right {
+      font-size: 3.75vw; }
+  .main .tit-bottom {
+    font-size: 4.16667vw;
+    color: #F00F00;
+    text-align: center; }
+  .main .btn-back {
+    display: block;
+    width: 90%;
+    margin: 2.08333vw auto 4.16667vw auto;
+    background: #FF4200;
+    line-height: 10.625vw;
+    text-align: center;
+    border-radius: 4.16667vw;
+    color: #fff;
+    font-size: 4.16667vw; } }
+
+/*# sourceMappingURL=showlist.css.map */

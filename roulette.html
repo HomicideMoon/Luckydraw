@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/roulette.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="banner">
+            <img src="img/banner.jpg" title="专享福利">
+        </div>
+        <div class="header">
+            <p>本月主套餐使用流量:<span>1580.00M</span></p>
+            <p class="big">您有<span></span>次机会</p>
+        </div>
+        <div class="body">
+            <div class="circle"></div>
+            <div class="pointer">
+                <div class="btn"></div>
+
+            </div>
+        </div>
+        <div class="footer">
+            <a href="showlist.html" class="left">中奖记录>></a>
+            <a class="right">活动规则>></a>
+        </div>
+    </div>
+    <div class="cover"></div>
+
+
+    <div class="pop-up">
+        <a class="close"></a>
+        <div class="top"></div>
+        <div class="bottom">
+            <div class="tit">奖品将于次月10日前到账，请留意查收！</div>
+            <button class="submit">确定</button>
+        </div>
+    </div>
+
+    <div class="rules">
+        <a class="close2"></a>
+        <div class="tit"></div>
+        <div class="con">
+            <p>
+                1、活动时间：2016年10月18日——2016年12月31日。<br/> 2、活动期间，主套餐内使用流量每达300M，即可参与抽奖一次（例：600M即2次，900M即3次，以此类推）。
+                <br/> 3、活动抽奖只能在当月进行，抽奖机会次数当月月底清零，次月重新计算。
+                <br/> 4、抽奖奖池：30元天翼手机话费（赠送话费不可抵扣SP业务、国际漫游、国际长话）、100M省内流量、300M省内流量、500M省 内流量。 <br/> 5、话费和流量奖品次月10日前到账。获赠的流量包到账后，仅限获赠当月使用。流量超出后由号码本身套餐或者标准资费来收 取。天翼副号、天翼小号、6分卡（0元保底）、4G 0元日租卡、上网卡、个人定制及时长型套餐等不能加装流量包套餐的用户不 能订购，详询10000号。<br/>
+                <span>备注：非实名制用户不能受理流量包，请进行实名补登记后再购买。</span>
+            </p>
+
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
+<script src="js/jquery-1.7.2.min.js"></script>
+<!--cookie功能在服务器环境下可用-->
+<script src="js/jquery.cookie.js"></script>
+<script>
+    $(function() {
+        var result, set;
+        var chance;
+        var status = 0;
+        var date = new Date();
+        //存放当前时间比对cookie时间，不同则重置抽奖次数
+        var char = (date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate());
+        if ($.cookie('date') !== char) {
+            $.cookie('date', char);
+            $.cookie('chance', '5');
+        }
+        //initialization
+        chance = parseInt($.cookie('chance'));
+        $(".main .header p.big span").text(chance);
+        //奖品判定
+        function GetPriceType(ang) {
+
+            if (ang < 45) {
+                return 1;
+            } else if (ang > 45 && ang < 90) {
+                return 2;
+            } else if (ang > 90 && ang < 145) {
+                return 3;
+            } else {
+                return 4;
+            }
+        }
+        $(".pop-up .close,.pop-up .submit").on('click', function() {
+            $(".cover").fadeOut();
+            $(".pop-up").fadeOut();
+
+        })
+
+        $(".footer .right").on('click', function() {
+            $(".cover").fadeIn();
+            $(".rules").fadeIn();
+        })
+
+        $(".rules .close2").on('click', function() {
+            $(".cover").fadeOut();
+            $(".rules").fadeOut();
+        })
+
+        $("body").on('click', '.btn', function() {
+            if (status == 0 && chance > 0) {
+                chance--;
+                $.cookie('chance', (chance + ""));
+                var char1 = parseInt($.cookie('chance'));
+                status = 1;
+                var angle = Math.floor(Math.random() * 1080);
+                //初始位置已经是22.5度
+                var anglex = angle + 22.5
+                var ag = anglex - Math.floor(anglex / 180) * 180;
+                result = GetPriceType(ag);
+                //一秒钟走180度，1帧3度
+                var stepmax = angle / 3;
+
+                var step = 0;
+                set = setInterval(function() {
+                    if (step < stepmax - 1) {
+                        step += 1;
+                        $(".circle").css("transform", "rotate(" + step * 3 + "deg)");
+                    } else {
+                        $(".circle").css("transform", "rotate(" + angle + "");
+                        $(".main .header p.big span").text(chance);
+                        $(".cover").fadeIn();
+                        $(".pop-up").fadeIn().find(".top").css({
+                            "background-image": "url(img/prize" + result + ".png)",
+                        });
+                        status = 0;
+                        clearInterval(set);
+                    }
+                }, 1000 / 60);
+            } else if (chance == 0) {
+                alert("您的次数已用完，请明天再来！");
+            }
+
+
+        })
+    })
+
+</script>

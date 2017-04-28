@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+html,
+body {
+  height: 100%;
+  font-family: "Mircosoft Yahei"; }
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none; }
+
+ul,
+ol {
+  list-style-type: none; }
+
+input {
+  outline: none; }
+
+/*# sourceMappingURL=public.css.map */

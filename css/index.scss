@@ -1,0 +1,95 @@
+@import 'public.scss';
+$device-width:6.4;
+@function vw($size) {
+    @return $size/$device-width * 1vw;
+}
+
+body {
+    background: #fe620d;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    img {
+        color: transparent;
+        font-size: 0;
+        vertical-align: middle;
+        max-width: 100%;
+    }
+}
+
+.main {
+    margin: 0 auto;
+    width: 100%;
+    height: 227px;
+    background: url(../img/index-bg.png) no-repeat;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    .buttons {
+        width: 494px;
+        height: 63px;
+        padding-top: 20px;
+        margin: 0 auto;
+        a {
+            height: 100%;
+            width: 237px;
+        }
+        a.left {
+            float: left;
+            background: url(../img/index-btn1.png) no-repeat;
+            background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+        }
+        a.right {
+            float: right;
+            background: url(../img/index-btn2.png) no-repeat;
+            background-size: 100% 100%;
+            -webkit-background-size: 100% 100%;
+        }
+    }
+}
+
+.info {
+    width: 80%;
+    margin: 60px auto;
+    background-color: #d23c07;
+    padding: 20px 0;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    p {
+        width: 90%;
+        margin: 0 auto;
+        font-size: 21px;
+        color: #ffffff;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .main {
+        height: vw(227);
+        .buttons {
+            width: vw(494);
+            height: vw(63);
+            padding-top: vw(20);
+            a {
+                height: 100%;
+                width: vw(237);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:480px) {
+    .info {
+        margin: vw(60) auto;
+        padding: vw(20) 0;
+        border-radius: vw(6);
+        -webkit-border-radius: vw(6);
+        p {
+            font-size: vw(24);
+        }
+    }
+}

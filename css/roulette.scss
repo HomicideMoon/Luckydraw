@@ -1,0 +1,364 @@
+@import 'public.scss';
+$device-width:6.4;
+$device-width-sm:4.8;
+@function vw($size) {
+    @return $size/$device-width * 1vw;
+}
+
+@function vws($size) {
+    @return $size/$device-width-sm * 1vw;
+}
+
+body {
+    background: #f9f1cd;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    padding-bottom: 30px;
+    .banner {
+        width: 100%;
+        height: auto;
+        img {
+            color: transparent;
+            font-size: 0;
+            vertical-align: middle;
+            max-width: 100%;
+        }
+    }
+    .header {
+        width: 75%;
+        height: auto;
+        background: #FFF;
+        margin: 0 auto 15px auto;
+        padding: 5px;
+        border: 3px solid #2be6fc;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        p {
+            line-height: 30px;
+            font-size: 20px;
+            color: #0d8093;
+            font-weight: 600;
+            text-align: center;
+            span {
+                color: #f02929;
+            }
+        }
+        p.big {
+            line-height: 40px;
+            font-size: 26px;
+        }
+    }
+    .body {
+        background: url(../img/header.png) no-repeat;
+        width: 100%;
+        height: auto;
+        background-size: 100% auto;
+        -webkit-background-size: 100% auto;
+        position: relative;
+        .circle {
+            background-image: url(../img/circle.png);
+            width: 414px;
+            height: 414px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .pointer {
+            background-image: url(../img/coin.png);
+            background-size: cover;
+            -webkit-background-size: cover;
+            width: 138px;
+            height: 178px;
+            position: absolute;
+            left: 50%;
+            top: 103px;
+            margin-left: -69px;
+            z-index: 3;
+            .btn {
+                width: 138px;
+                height: 138px;
+                margin-top: 40px;
+            }
+        }
+    }
+    .footer {
+        background: url(../img/footer.png) no-repeat;
+        width: 100%;
+        height: 162px;
+        background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        margin-top: -120px;
+        position: relative;
+        z-index: 1;
+        a {
+            position: absolute;
+            bottom: 0;
+            font-size: 23px;
+            color: #0d8093;
+            font-weight: 600;
+        }
+        a.left {
+            left: 0
+        }
+        a.right {
+            right: 0
+        }
+    }
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: none;
+}
+
+.pop-up {
+    width: 478px;
+    height: 404px;
+    display: none;
+    position: fixed;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    margin-left: -247px;
+    margin-top: -235px;
+    .close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 26px;
+        height: 26px;
+        background: url(../img/close.png);
+        z-index: 6
+    }
+    .top {
+        width: 100%;
+        height: 279px;
+        background-size: cover;
+        -webkit-background-size: cover;
+    }
+    .bottom {
+        width: 100%;
+        height: 125px;
+        text-align: center;
+        background: #FFF;
+        overflow: hidden;
+        .tit {
+            width: 100%;
+            height: 48px;
+            line-height: 48px;
+            font-size: 20px;
+            color: #fe544a
+        }
+        .submit {
+            width: 240px;
+            height: 57px;
+            border-radius: 8px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 57px;
+            font-size: 32px;
+            color: #FFF;
+            background: #ff4338;
+            outline: none;
+        }
+    }
+}
+
+.rules {
+    width: 480px;
+    height: 250px;
+    padding: 40px 0 20px 0;
+    background: #FFF;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    position: fixed;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+    margin-left: -240px;
+    margin-top: -155px;
+    display: none;
+    .tit {
+        position: absolute;
+        z-index: 6;
+        left: 50%;
+        top: -45px;
+        display: block;
+        width: 360px;
+        height: 74px;
+        margin-left: -180px;
+        background: url(../img/rules-tit.png) no-repeat;
+        background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+    }
+    .con {
+        width: 440px;
+        max-height: 220px;
+        overflow: auto;
+        padding: 15px 20px;
+        p {
+            color: #333;
+            font-size: 13px;
+            line-height: 19.5px;
+            span {
+                color: #fd5745;
+            }
+        }
+    }
+    .close2 {
+        position: absolute;
+        right: 0px;
+        top: -70px;
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: url(../img/close2.png) no-repeat;
+        background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .main {
+        padding-bottom: vw(30);
+        .header {
+            width: 75%;
+            margin: 0 auto vw(15) auto;
+            padding: vw(5);
+            border: vw(3) solid #2be6fc;
+            border-radius: vw(6);
+            -webkit-border-radius: vw(6);
+            p {
+                line-height: vw(39);
+                font-size: vw(26);
+            }
+            p.big {
+                line-height: vw(45);
+                font-size: vw(30);
+            }
+        }
+        .footer {
+            height: vw(162);
+            background-size: cover;
+            -webkit-background-size: cover;
+            margin-top: vw(-120);
+            a {
+                font-size: vw(30);
+            }
+        }
+    }
+    .pop-up {
+        width: vw(478);
+        height: vw(404);
+        margin-left: vw(-247);
+        margin-top: vw(-235);
+        .close {
+            top: vw(16);
+            right: vw(16);
+            width: vw(26);
+            height: vw(26);
+            background-size: cover;
+            -webkit-background-size: cover;
+        }
+        .top {
+            width: 100%;
+            height: vw(279);
+            background-size: cover;
+            -webkit-background-size: cover;
+        }
+        .bottom {
+            width: 100%;
+            height: vw(125);
+            .tit {
+                width: 100%;
+                height: vw(48);
+                line-height: vw(48);
+                font-size: vw(24);
+            }
+            .submit {
+                width: vw(240);
+                height: vw(57);
+                border-radius: vw(8);
+                line-height: vw(57);
+                font-size: vw(32);
+            }
+        }
+    }
+    .rules {
+        width: vw(480);
+        height: vw(250);
+        padding: vw(40) 0 vw(20) 0;
+        border-radius: vw(6);
+        -webkit-border-radius: vw(6);
+        margin-left: vw(-240);
+        margin-top: vw(-155);
+        .tit {
+            top: vw(-45);
+            width: vw(360);
+            height: vw(74);
+            margin-left: vw(-180);
+            background-size: cover;
+            -webkit-background-size: cover;
+        }
+        .con {
+            width: vw(440);
+            max-height: vw(220);
+            padding: vw(15) vw(20);
+            p {
+                font-size: vw(13);
+                line-height: vw(19.5);
+            }
+        }
+        .close2 {
+            top: vw(-70);
+            width: vw(50);
+            height: vw(50);
+            background-size: cover;
+            -webkit-background-size: cover;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main {
+        .body {
+            background: url(../img/header.png) no-repeat;
+            width: 100%;
+            height: auto;
+            background-size: contain;
+            -webkit-background-size: contain;
+            position: relative;
+            .circle {
+                width: vws(414);
+                height: vws(414);
+                background-size: cover;
+                -webkit-background-size: cover;
+            }
+            .pointer {
+                background-size: cover;
+                -webkit-background-size: cover;
+                width: vws(138);
+                height: vws(178);
+                top: vws(103);
+                margin-left: vws(-69);
+                .btn {
+                    width: vws(138);
+                    height: vws(138);
+                    margin-top: vws(40);
+                }
+            }
+        }
+    }
+}

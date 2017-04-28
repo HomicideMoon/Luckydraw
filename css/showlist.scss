@@ -1,0 +1,122 @@
+@import 'public.scss';
+$device-width-sm:4.8;
+@function vws($size) {
+    @return $size/$device-width-sm * 1vw;
+}
+
+body {
+    background: #f9f1cd;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    .banner {
+        width: 100%;
+        img {
+            color: transparent;
+            font-size: 0;
+            vertical-align: middle;
+            max-width: 100%;
+        }
+    }
+    .tit {
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+        color: #0d8093;
+    }
+    .lists {
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+        .single {
+            box-sizing: border-box;
+            width: 100%;
+            font-size: 14px;
+            line-height: 21px;
+            padding: 15px;
+            margin: 7px auto;
+            border-radius: 20px;
+            -webkit-border-radius: 20px;
+            background: #FFF;
+            overflow: hidden;
+            .left {
+                width: 50%;
+                float: left;
+                line-height: 21px;
+            }
+            .right {
+                color: #999999;
+                width: 50%;
+                float: left;
+                font-size: 12px;
+                text-align: right;
+            }
+        }
+        .single.first {
+            text-align: center;
+        }
+    }
+    .tit-bottom {
+        width: 100%;
+        font-size: 16px;
+        color: #F00F00;
+        text-align: center;
+    }
+    .btn-back {
+        display: block;
+        width: 90%;
+        margin: 10px auto 20px auto;
+        background: #FF4200;
+        line-height: 51px;
+        text-align: center;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 14px;
+    }
+}
+
+@media screen and(max-width:480px) {
+    .main {
+        .tit {
+            font-size: vws(28);
+            line-height: vws(36);
+        }
+        .lists {
+            .single {
+                width: 100%;
+                font-size: vws(21);
+                line-height: vws(21);
+                padding: vws(15);
+                margin: vws(7) auto;
+                border-radius: vws(20);
+                -webkit-border-radius: vws(20);
+                .left {
+                    line-height: vws(21);
+                }
+                .right {
+                    font-size: vws(18);
+                }
+            }
+        }
+        .tit-bottom {
+            font-size: vws(20);
+            color: #F00F00;
+            text-align: center;
+        }
+        .btn-back {
+            display: block;
+            width: 90%;
+            margin: vws(10) auto vws(20) auto;
+            background: #FF4200;
+            line-height: vws(51);
+            text-align: center;
+            border-radius: vws(20);
+            color: #fff;
+            font-size: vws(20);
+        }
+    }
+}
